@@ -1,10 +1,10 @@
 class ProjectUtils {
   static const List<String> banners = [
-    "assets/projects/snackbar.png",
+    /*"assets/projects/snackbar.png",
     "assets/projects/quranB.png",
     "assets/projects/medkitB.png",
     "assets/projects/hereiamB.png",
-    "assets/projects/covidB.png",
+    "assets/projects/covidB.png",*/
   ];
 
   static const List<String> icons = [

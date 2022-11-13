@@ -39,7 +39,7 @@ class StaticUtils {
   ];
 
   static const List<String> socialLinks = [
-    "https://www.facebook.com/devender.raurya/",
+    "https://www.facebook.com/devender.maurya456/",
     "https://www.instagram.com/devendramaurya456/",
     "https://twitter.com/Devendra7897430",
     "https://www.linkedin.com/in/devendra-maurya-b639261aa/",
