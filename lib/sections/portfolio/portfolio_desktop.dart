@@ -1,13 +1,13 @@
-import 'package:flutter/material.dart';
 import 'package:devendramaurya/configs/configs.dart';
 import 'package:devendramaurya/constants.dart';
 import 'package:devendramaurya/utils/project_utils.dart';
 import 'package:devendramaurya/utils/utils.dart';
 import 'package:devendramaurya/widget/custom_text_heading.dart';
 import 'package:devendramaurya/widget/project_card.dart';
+import 'package:flutter/material.dart';
 
 class PortfolioDesktop extends StatefulWidget {
-  const PortfolioDesktop({Key? key}) : super(key: key);
+  const PortfolioDesktop({super.key});
 
   @override
   State<PortfolioDesktop> createState() => _PortfolioDesktopState();

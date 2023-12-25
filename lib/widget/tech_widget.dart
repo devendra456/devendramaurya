@@ -1,12 +1,13 @@
-import 'package:flutter/material.dart';
 import 'package:devendramaurya/configs/app_dimensions.dart';
 import 'package:devendramaurya/configs/app_theme.dart';
 import 'package:devendramaurya/configs/app_typography.dart';
+import 'package:flutter/material.dart';
 
 class ToolTechWidget extends StatelessWidget {
   final String techName;
 
-  const ToolTechWidget({Key? key, required this.techName}) : super(key: key);
+  const ToolTechWidget({super.key, required this.techName});
+
   @override
   Widget build(BuildContext context) {
     return Row(

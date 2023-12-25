@@ -1,17 +1,18 @@
-import 'package:flutter/material.dart';
 import 'package:devendramaurya/animations/entrance_fader.dart';
 import 'package:devendramaurya/configs/configs.dart';
 import 'package:devendramaurya/provider/scroll_provider.dart';
+import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
 class NavBarActionButton extends StatelessWidget {
   final String label;
   final int index;
+
   const NavBarActionButton({
-    Key? key,
+    super.key,
     required this.label,
     required this.index,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {

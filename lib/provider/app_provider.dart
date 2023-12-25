@@ -12,6 +12,7 @@ class AppProvider extends ChangeNotifier {
       Provider.of<AppProvider>(context, listen: listen);
 
   ThemeMode _themeMode = ThemeMode.light;
+
   ThemeMode get themeMode => _themeMode;
 
   bool get isDark => _themeMode == ThemeMode.dark;

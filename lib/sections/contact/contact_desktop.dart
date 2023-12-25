@@ -6,7 +6,7 @@ import 'package:devendramaurya/widget/project_card.dart';
 import 'package:flutter/material.dart';
 
 class ContactDesktop extends StatelessWidget {
-  const ContactDesktop({Key? key}) : super(key: key);
+  const ContactDesktop({super.key});
 
   @override
   Widget build(BuildContext context) {

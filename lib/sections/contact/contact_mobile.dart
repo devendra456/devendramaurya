@@ -1,12 +1,12 @@
 import 'package:carousel_slider/carousel_slider.dart';
-import 'package:flutter/material.dart';
 import 'package:devendramaurya/configs/app_dimensions.dart';
 import 'package:devendramaurya/utils/contact_utils.dart';
 import 'package:devendramaurya/widget/custom_text_heading.dart';
 import 'package:devendramaurya/widget/project_card.dart';
+import 'package:flutter/material.dart';
 
 class ContactMobileTab extends StatelessWidget {
-  const ContactMobileTab({Key? key}) : super(key: key);
+  const ContactMobileTab({super.key});
 
   @override
   Widget build(BuildContext context) {

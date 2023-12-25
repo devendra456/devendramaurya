@@ -1,7 +1,7 @@
 part of '../main_section.dart';
 
 class _NavbarDesktop extends StatelessWidget {
-  const _NavbarDesktop({Key? key}) : super(key: key);
+  const _NavbarDesktop();
 
   @override
   Widget build(BuildContext context) {
@@ -47,7 +47,7 @@ class _NavbarDesktop extends StatelessWidget {
               ),
             ),
           ),
-          Space.x!,
+          /*Space.x!,
           Switch(
             inactiveTrackColor: Colors.grey,
             value: appProvider.isDark,
@@ -57,7 +57,7 @@ class _NavbarDesktop extends StatelessWidget {
               );
             },
             activeColor: AppTheme.c!.primary!,
-          ),
+          ),*/
           Space.x!,
         ],
       ),
@@ -66,7 +66,7 @@ class _NavbarDesktop extends StatelessWidget {
 }
 
 class _NavBarTablet extends StatelessWidget {
-  const _NavBarTablet({Key? key}) : super(key: key);
+  const _NavBarTablet();
 
   @override
   Widget build(BuildContext context) {

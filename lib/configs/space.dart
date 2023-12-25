@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
-import 'ui.dart';
+
 import 'app_dimensions.dart';
+import 'ui.dart';
 
 class Space {
   static Widget? x;
@@ -51,12 +52,14 @@ class Space {
   }
 
   static Widget xf([double no = 1]) => SizedBox(width: AppDimensions.space(no));
+
   static Widget yf([double no = 1]) =>
       SizedBox(height: AppDimensions.space(no));
 
   static EdgeInsets hf([double no = 1]) => EdgeInsets.symmetric(
         horizontal: AppDimensions.space(no),
       );
+
   static EdgeInsets vf([double no = 1]) => EdgeInsets.symmetric(
         vertical: AppDimensions.space(no),
       );

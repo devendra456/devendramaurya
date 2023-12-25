@@ -13,14 +13,15 @@ class ProjectCard extends StatefulWidget {
   final IconData? projectIconData;
 
   const ProjectCard({
-    Key? key,
+    super.key,
     this.banner,
     this.projectIcon,
     this.projectLink,
     this.projectIconData,
     required this.projectTitle,
     required this.projectDescription,
-  }) : super(key: key);
+  });
+
   @override
   ProjectCardState createState() => ProjectCardState();
 }

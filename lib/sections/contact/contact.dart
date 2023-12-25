@@ -1,10 +1,10 @@
-import 'package:flutter/material.dart';
 import 'package:devendramaurya/responsive/responsive.dart';
 import 'package:devendramaurya/sections/contact/contact_desktop.dart';
 import 'package:devendramaurya/sections/contact/contact_mobile.dart';
+import 'package:flutter/material.dart';
 
 class Contact extends StatelessWidget {
-  const Contact({Key? key}) : super(key: key);
+  const Contact({super.key});
 
   @override
   Widget build(BuildContext context) {

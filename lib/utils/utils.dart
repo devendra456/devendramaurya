@@ -48,7 +48,8 @@ class StaticUtils {
     "https://api.whatsapp.com/send/?phone=917897430432&text=Hi&type=phone_number&app_absent=0",
   ];
 
-  static const String resume = 'https://drive.google.com/file/d/1Gwg-3VHR44nLAf0I_W2jXEPJ_mMBLkY3/view?usp=sharing';
+  static const String resume =
+      'https://drive.google.com/file/d/1Gwg-3VHR44nLAf0I_W2jXEPJ_mMBLkY3/view?usp=sharing';
 
   static const String gitHub = 'https://github.com/devendra456';
 }

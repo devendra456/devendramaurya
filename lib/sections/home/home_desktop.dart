@@ -6,7 +6,7 @@ import 'package:devendramaurya/widget/social_links.dart';
 import 'package:flutter/material.dart';
 
 class HomeDesktop extends StatelessWidget {
-  const HomeDesktop({Key? key}) : super(key: key);
+  const HomeDesktop({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -28,7 +28,9 @@ class HomeDesktop extends StatelessWidget {
                 duration: const Duration(milliseconds: 800),
                 child: Image.asset(
                   StaticUtils.blackWhitePhoto,
-                  height: size.width < 1200 ? size.height * 0.8 : size.height * 0.85,
+                  height: size.width < 1200
+                      ? size.height * 0.8
+                      : size.height * 0.85,
                 ),
               ),
             ),

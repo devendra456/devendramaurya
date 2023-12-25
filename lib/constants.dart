@@ -11,6 +11,7 @@ final kTools = [
   "Dart",
   "Android",
   "Java",
-  "Git",
+  "Github",
   "Postman",
+  "FlutterFlow",
 ];

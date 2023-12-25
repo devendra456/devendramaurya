@@ -6,7 +6,7 @@ import 'package:devendramaurya/widget/social_links.dart';
 import 'package:flutter/material.dart';
 
 class HomeTab extends StatelessWidget {
-  const HomeTab({Key? key}) : super(key: key);
+  const HomeTab({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -27,7 +27,9 @@ class HomeTab extends StatelessWidget {
                 duration: const Duration(milliseconds: 800),
                 child: Image.asset(
                   StaticUtils.blackWhitePhoto,
-                  height: size.width < 1200 ? size.height * 0.75 : size.height * 0.85,
+                  height: size.width < 1200
+                      ? size.height * 0.75
+                      : size.height * 0.85,
                 ),
               ),
             ),

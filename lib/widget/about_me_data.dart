@@ -1,6 +1,6 @@
-import 'package:flutter/material.dart';
 import 'package:devendramaurya/configs/app_typography.dart';
 import 'package:devendramaurya/provider/app_provider.dart';
+import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
 class AboutMeData extends StatelessWidget {
@@ -9,11 +9,12 @@ class AboutMeData extends StatelessWidget {
   final Alignment? alignment;
 
   const AboutMeData({
-    Key? key,
+    super.key,
     required this.data,
     required this.information,
     this.alignment,
-  }) : super(key: key);
+  });
+
   @override
   Widget build(BuildContext context) {
     final appProvider = Provider.of<AppProvider>(context);

@@ -23,7 +23,7 @@ part 'widgets/_mobile_drawer.dart';
 part 'widgets/_navbar_desktop.dart';
 
 class MainPage extends StatefulWidget {
-  const MainPage({Key? key}) : super(key: key);
+  const MainPage({super.key});
 
   @override
   State<MainPage> createState() => _MainPageState();
@@ -44,7 +44,9 @@ class _MainPageState extends State<MainPage> {
           children: [
             const _Body(),
             const ArrowOnTop(),
-            Responsive.isTablet(context) || Responsive.isMobile(context) ? const _NavBarTablet() : const _NavbarDesktop(),
+            Responsive.isTablet(context) || Responsive.isMobile(context)
+                ? const _NavBarTablet()
+                : const _NavbarDesktop(),
           ],
         ),
       ),

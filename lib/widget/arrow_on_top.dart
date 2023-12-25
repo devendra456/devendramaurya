@@ -7,7 +7,7 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
 class ArrowOnTop extends StatefulWidget {
-  const ArrowOnTop({Key? key}) : super(key: key);
+  const ArrowOnTop({super.key});
 
   @override
   ArrowOnTopState createState() => ArrowOnTopState();
@@ -15,6 +15,7 @@ class ArrowOnTop extends StatefulWidget {
 
 class ArrowOnTopState extends State<ArrowOnTop> {
   bool isHover = false;
+
   @override
   Widget build(BuildContext context) {
     final appProvider = Provider.of<AppProvider>(context);
@@ -26,7 +27,8 @@ class ArrowOnTopState extends State<ArrowOnTop> {
       child: EntranceFader(
         offset: const Offset(0, 20),
         child: Padding(
-          padding: EdgeInsets.only(top: MediaQuery.of(context).size.height * 0.025),
+          padding:
+              EdgeInsets.only(top: MediaQuery.of(context).size.height * 0.025),
           child: Row(
             mainAxisAlignment: MainAxisAlignment.end,
             children: [

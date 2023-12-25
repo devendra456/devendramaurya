@@ -1,6 +1,6 @@
-import 'package:flutter/material.dart';
 import 'package:devendramaurya/configs/configs.dart';
 import 'package:devendramaurya/constants.dart';
+import 'package:flutter/material.dart';
 
 class CommunityIconBtn extends StatelessWidget {
   final String icon;
@@ -8,11 +8,12 @@ class CommunityIconBtn extends StatelessWidget {
   final double height;
 
   const CommunityIconBtn({
-    Key? key,
+    super.key,
     required this.icon,
     required this.link,
     required this.height,
-  }) : super(key: key);
+  });
+
   @override
   Widget build(BuildContext context) {
     return Padding(

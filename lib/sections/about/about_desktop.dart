@@ -12,7 +12,7 @@ import 'package:universal_html/html.dart' as html;
 import '../../widget/about_me_data.dart';
 
 class AboutDesktop extends StatelessWidget {
-  const AboutDesktop({Key? key}) : super(key: key);
+  const AboutDesktop({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -94,11 +94,11 @@ class AboutDesktop extends StatelessWidget {
                         color: Colors.grey[800],
                         thickness: AppDimensions.normalize(0.5),
                       ),
-                      Row(
+                      const Row(
                         children: [
                           Column(
                             crossAxisAlignment: CrossAxisAlignment.start,
-                            children: const [
+                            children: [
                               AboutMeData(
                                 data: "Name",
                                 information: "Devendra Maurya",
@@ -109,10 +109,10 @@ class AboutDesktop extends StatelessWidget {
                               ),
                             ],
                           ),
-                          const Spacer(),
+                          Spacer(),
                           Column(
                             crossAxisAlignment: CrossAxisAlignment.start,
-                            children: const [
+                            children: [
                               AboutMeData(
                                 data: "Email",
                                 information: "devendramaurya456@gmail.com",
@@ -132,7 +132,8 @@ class AboutDesktop extends StatelessWidget {
                             height: AppDimensions.normalize(13),
                             width: AppDimensions.normalize(40),
                             child: OutlinedButton(
-                              onPressed: () => html.window.open(StaticUtils.resume, 'pdf'),
+                              onPressed: () =>
+                                  html.window.open(StaticUtils.resume, 'pdf'),
                               child: const Text(
                                 "Resume",
                               ),
@@ -149,7 +150,8 @@ class AboutDesktop extends StatelessWidget {
                                   child: CommunityIconBtn(
                                     icon: e.value,
                                     link: WorkUtils.communityLinks[e.key],
-                                    height: WorkUtils.communityLogoHeight[e.key],
+                                    height:
+                                        WorkUtils.communityLogoHeight[e.key],
                                   ),
                                 ),
                               )

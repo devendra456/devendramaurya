@@ -1,14 +1,14 @@
 import 'package:carousel_slider/carousel_slider.dart';
-import 'package:flutter/material.dart';
 import 'package:devendramaurya/configs/configs.dart';
 import 'package:devendramaurya/constants.dart';
 import 'package:devendramaurya/utils/project_utils.dart';
 import 'package:devendramaurya/utils/utils.dart';
 import 'package:devendramaurya/widget/custom_text_heading.dart';
 import 'package:devendramaurya/widget/project_card.dart';
+import 'package:flutter/material.dart';
 
 class PortfolioMobileTab extends StatelessWidget {
-  const PortfolioMobileTab({Key? key}) : super(key: key);
+  const PortfolioMobileTab({super.key});
 
   @override
   Widget build(BuildContext context) {

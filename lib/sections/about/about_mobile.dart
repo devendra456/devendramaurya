@@ -12,7 +12,7 @@ import 'package:flutter/material.dart';
 import 'package:universal_html/html.dart' as html;
 
 class AboutMobile extends StatelessWidget {
-  const AboutMobile({Key? key}) : super(key: key);
+  const AboutMobile({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -104,7 +104,9 @@ class AboutMobile extends StatelessWidget {
           OutlinedButton(
               child: const Text("Resume"),
               onPressed: () {
-                kIsWeb ? html.window.open(StaticUtils.resume, "pdf") : openURL(StaticUtils.resume);
+                kIsWeb
+                    ? html.window.open(StaticUtils.resume, "pdf")
+                    : openURL(StaticUtils.resume);
               }),
           Space.y!,
           Wrap(

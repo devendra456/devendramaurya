@@ -5,7 +5,7 @@ import 'package:devendramaurya/widget/social_links.dart';
 import 'package:flutter/material.dart';
 
 class HomeMobile extends StatelessWidget {
-  const HomeMobile({Key? key}) : super(key: key);
+  const HomeMobile({super.key});
 
   @override
   Widget build(BuildContext context) {
