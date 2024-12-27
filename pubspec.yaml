@@ -1,0 +1,39 @@
+name: devendramaurya
+description: "A new Flutter project."
+
+publish_to: 'none' 
+
+version: 3.0.0+10
+
+environment:
+  sdk: ^3.6.1
+  flutter: 3.27.2
+
+
+dependencies:
+  flutter:
+    sdk: flutter
+  flutter_web_plugins:
+    sdk: flutter
+
+  cupertino_icons: ^1.0.8
+  google_fonts: ^6.2.1
+  flutter_bloc: ^9.0.0
+  url_launcher: ^6.3.1
+  flutter_native_splash: ^2.4.4
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+
+  flutter_lints: ^5.0.0
+
+flutter_native_splash:
+  image: assets/images/logo.png
+  color: "#000000"
+
+flutter:
+  assets:
+    - assets/icons/
+    - assets/images/
+  uses-material-design: true
