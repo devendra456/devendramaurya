@@ -2,11 +2,9 @@ import 'package:flutter/material.dart';
 
 import '../../../app/statics/data_values.dart';
 import '../../../app/statics/key_holders.dart';
-import '../widgets/button_text.dart';
-import '../widgets/text_pairs.dart';
 import '../widgets/container_card.dart';
-import '../widgets/container_banner.dart';
 import '../widgets/frame_title.dart';
+import '../widgets/text_pairs.dart';
 
 class DS2AboutMe extends StatelessWidget {
   const DS2AboutMe({super.key});
@@ -43,7 +41,7 @@ class DS2AboutMe extends StatelessWidget {
                   title: DataValues.aboutMeFullNameTitle,
                   description: DataValues.aboutMeFullNameDescription,
                 ),
-               /* const SizedBox(height: 30.0),
+                /* const SizedBox(height: 30.0),
                 TextPairs(context: context).type1(
                   title: DataValues.aboutMeNwITitle,
                   description: DataValues.aboutMeNwIDescription,
@@ -73,7 +71,6 @@ class DS2AboutMe extends StatelessWidget {
                   title: DataValues.aboutMeNationalityTitle,
                   description: DataValues.aboutMeNationalityDescription,
                 ),
-
               ],
             ),
           ),

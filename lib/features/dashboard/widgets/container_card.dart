@@ -295,11 +295,10 @@ class ContainerCard {
                 ),
                 const SizedBox(height: 10.0),
                 TextPairs(context: context).type2(
-                  title: values[3],
-                  value1: values[4],
-                  value2: "",
-                  isThreeLines: false
-                ),
+                    title: values[3],
+                    value1: values[4],
+                    value2: "",
+                    isThreeLines: false),
               ],
             ),
             const SizedBox(height: 20.0),

@@ -1,11 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:url_launcher/url_launcher.dart';
 
 import '../../../app/statics/data_values.dart';
 
-
 class DS8Footer extends StatelessWidget {
   const DS8Footer({super.key});
+
   /*Widget getSourceCode(BuildContext context) {
     return MouseRegion(
       cursor: SystemMouseCursors.click,

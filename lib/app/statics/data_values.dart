@@ -22,7 +22,8 @@ class DataValues {
   static Uri instagramURL = Uri.parse('https://instagram.com/devendra_pbh');
   static Uri lateNightStudentURL = Uri.parse('https://blog.dileepabandara.dev');
   static Uri emailURL = Uri.parse('mailto:$contactEmail');
-  static Uri resumeURL = Uri.parse('https://drive.google.com/file/d/1Gwg-3VHR44nLAf0I_W2jXEPJ_mMBLkY3/view');
+  static Uri resumeURL = Uri.parse(
+      'https://drive.google.com/file/d/1Gwg-3VHR44nLAf0I_W2jXEPJ_mMBLkY3/view');
 
   // Header
   static const String headerGreetings = 'Hello, World! I\'m';
@@ -94,12 +95,15 @@ class DataValues {
       "In this section, you will find details about my education from 2017 to the present. Before 2017, it was primarily my school education, which wasn't particularly notable. Below are the details of my college education.";
   static const String educationOrg1Title =
       'Dr. A. P. J. Abdul Kalam Technical University, Lucknow Utter Pradesh';
-  static const String educationOrg1Course1Name = 'Babu Sunder Singh Institute Of Technology Lucknow, Uttar Pradesh';
+  static const String educationOrg1Course1Name =
+      'Babu Sunder Singh Institute Of Technology Lucknow, Uttar Pradesh';
   static const String educationOrg1Course1Grade =
       'Computer Science & Engineering';
   static const String educationOrg1Course1Year = 'June 2022 - July 2025';
-  static const String educationOrg1Course2Name = 'Cloud Computing, Big Data, Discrete Mathematics, Python, Compiler Design';
-  static const String educationOrg1Course2Grade = 'Passed with 7.5 CGPA, 71.25%';
+  static const String educationOrg1Course2Name =
+      'Cloud Computing, Big Data, Discrete Mathematics, Python, Compiler Design';
+  static const String educationOrg1Course2Grade =
+      'Passed with 7.5 CGPA, 71.25%';
   static const String educationOrg1Course2Year = '2013';
   static const String educationOrg1Course3Name = 'Education Period';
   static const String educationOrg1Course3Year = 'Secondary: 2008 - 2016';
@@ -107,8 +111,10 @@ class DataValues {
   static const String educationOrg1URL = 'https://www.bssitm.com';
   static const String educationOrg2URL = 'https://www.gpppratapgarh.in';
 
-  static const String educationOrg2Title = 'Board of Technical Education Utter Pradesh';
-  static const String educationOrg2Course1Name = 'Rajkiya Polytechnic Premdhar Patti Raniganj Pratapgarh Utter Pradesh';
+  static const String educationOrg2Title =
+      'Board of Technical Education Utter Pradesh';
+  static const String educationOrg2Course1Name =
+      'Rajkiya Polytechnic Premdhar Patti Raniganj Pratapgarh Utter Pradesh';
   static const String educationOrg2Course1Grade =
       'Computer Science & Engineering';
   static const String educationOrg2Course1Year = 'June 2017 - July 2020';
@@ -133,14 +139,15 @@ class DataValues {
   static const String experienceTitle = 'Experience';
   static const String experienceDescription =
       'Since I started my diploma in 2017, I\'ve started to learn and apply my knowledge in different places. So I started working as a freelance solution developer, and with time, I fell in love with different technologies. I received industrial training in my second year, and now I try out my experience.';
-  static const String experienceOrg1Title = 'RV Solution Pvt. Ltd. Noida Utter Pradesh';
+  static const String experienceOrg1Title =
+      'RV Solution Pvt. Ltd. Noida Utter Pradesh';
   static const String experienceOrg1Role = 'Software Developer';
   static const String experienceOrg1Years = 'May 2023 - Presents';
   static const String experienceOrg1Vales =
       'Android, iOS, Flutter, Dart, UI/UX, Tech Support Assistant, Project Management & Team Management.';
-  static const String experienceOrg2Title = 'Skyview Smart Solutions Pvt. Ltd. Lucknow Utter Pradesh';
-  static const String experienceOrg2Role =
-      'Mobile App Developer';
+  static const String experienceOrg2Title =
+      'Skyview Smart Solutions Pvt. Ltd. Lucknow Utter Pradesh';
+  static const String experienceOrg2Role = 'Mobile App Developer';
   static const String experienceOrg2Years = 'May 2021 - May 2023';
   static const String experienceOrg2Vales =
       'Android, Flutter, Dart, Firebase, Git, REST API, Client Handling, JSON Parsing & UI UX Designing.';

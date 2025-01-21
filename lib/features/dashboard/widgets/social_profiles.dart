@@ -21,7 +21,8 @@ class SocialProfiles extends StatelessWidget {
         const SizedBox(width: 10.0),
         ButtonIcon(name: 'twitter', url: DataValues.twitterURL).returnButton(),
         const SizedBox(width: 10.0),
-        ButtonIcon(name: 'whatsapp', url: DataValues.whatsappURL).returnButton(),
+        ButtonIcon(name: 'whatsapp', url: DataValues.whatsappURL)
+            .returnButton(),
         const SizedBox(width: 10.0),
         ButtonIcon(name: 'telegram', url: DataValues.telegramURL)
             .returnButton(),

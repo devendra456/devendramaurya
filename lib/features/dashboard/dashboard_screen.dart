@@ -1,13 +1,11 @@
 import 'dart:developer';
 
 import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_native_splash/flutter_native_splash.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 import '../../app/core/responsive_screen_provider.dart';
 import '../../app/statics/data_values.dart';
-import '../../app/theme/bloc/theme_bloc/theme_bloc.dart';
 import 'desktop/ds_1_header.dart';
 import 'desktop/ds_2_about_me.dart';
 import 'desktop/ds_3_education.dart';

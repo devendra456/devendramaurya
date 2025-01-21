@@ -2,11 +2,9 @@ import 'package:flutter/material.dart';
 
 import '../../../app/statics/data_values.dart';
 import '../../../app/statics/key_holders.dart';
-import '../widgets/button_text.dart';
-import '../widgets/text_pairs.dart';
 import '../widgets/container_card.dart';
-import '../widgets/container_banner.dart';
 import '../widgets/frame_title.dart';
+import '../widgets/text_pairs.dart';
 
 class MS2AboutMe extends StatelessWidget {
   const MS2AboutMe({super.key});

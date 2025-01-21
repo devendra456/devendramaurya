@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 
-
 class ButtonRectangle extends StatelessWidget {
   final String name;
   final VoidCallback onPressed;
+
   // final Color color;
   final String message;
 

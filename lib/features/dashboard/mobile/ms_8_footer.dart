@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:url_launcher/url_launcher.dart';
 
 import '../../../app/statics/data_values.dart';
-
 
 class MS8Footer extends StatelessWidget {
   const MS8Footer({super.key});

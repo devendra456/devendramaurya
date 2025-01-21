@@ -1,11 +1,9 @@
 import 'dart:developer';
 
 import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 import '../../../app/statics/data_values.dart';
-import '../../../app/theme/bloc/theme_bloc/theme_bloc.dart';
 import '../widgets/nav_bar.dart';
 import '../widgets/social_profiles.dart';
 
