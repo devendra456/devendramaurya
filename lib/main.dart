@@ -1,15 +1,19 @@
 import 'package:devendramaurya/app/theme/theme.dart';
+import 'package:devendramaurya/firebase_options.dart';
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_native_splash/flutter_native_splash.dart';
 import 'package:flutter_web_plugins/url_strategy.dart';
+
 import 'app/theme/bloc/theme_bloc/theme_bloc.dart';
 import 'app/theme/theme_utils.dart';
 import 'features/dashboard/dashboard_screen.dart';
 
-void main() {
+void main() async {
   WidgetsBinding widgetsBinding = WidgetsFlutterBinding.ensureInitialized();
   FlutterNativeSplash.preserve(widgetsBinding: widgetsBinding);
+  await Firebase.initializeApp(options: DefaultFirebaseOptions.currentPlatform);
   usePathUrlStrategy();
   runApp(const MyApp());
 }
@@ -24,7 +28,8 @@ class MyApp extends StatelessWidget {
     MaterialTheme theme = MaterialTheme(textTheme);
     ThemeMode themeMode = ThemeMode.system;
     return BlocProvider(
-      create: (context) => ThemeBloc()..add(ThemeLoadEvent(brightness: brightness)),
+      create: (context) =>
+          ThemeBloc()..add(ThemeLoadEvent(brightness: brightness)),
       child: BlocBuilder<ThemeBloc, ThemeState>(
         builder: (context, state) {
           if (state is ThemeSuccess) {
