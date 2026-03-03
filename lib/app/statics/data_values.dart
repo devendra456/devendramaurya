@@ -16,6 +16,7 @@ class DataValues {
   static Uri diplomaURL = Uri.parse(educationOrg2URL);
   static Uri rvURL = Uri.parse(experienceURL1);
   static Uri skyURL = Uri.parse(experienceURL2);
+  static Uri tccUrl = Uri.parse(experienceURL3);
   static Uri whatsappURL = Uri.parse('https://wa.me/7897430432');
   static Uri telegramURL = Uri.parse('https://t.me/devendramaurya');
   static Uri facebookURL = Uri.parse('https://facebook.com/devender.maurya456');
@@ -60,7 +61,7 @@ class DataValues {
   static const String aboutMeGenderDescription = 'Male (He/Him/His)';
   static const String aboutMeLocationTitle = 'Current Locations';
   static const String aboutMeLocationDescription =
-      'Noida Sector-52\nUtter Pradesh India';
+      'Gurgaon Sector-48, Haryana India';
   static const String aboutMeWorkDomainTitle = 'Working Domain';
   static const String aboutMeWorkDomainDescription = '09:30 - 06:30 (GMT+5:30)';
   static const String aboutMeStudentTitle = 'Computing Student';
@@ -119,13 +120,14 @@ class DataValues {
   // Experience
   static const String experienceURL1 = 'https://www.rvsolutions.in';
   static const String experienceURL2 = 'https://skyviewads.com';
+  static const String experienceURL3 = 'https://thecardcompany.in/';
   static const String experienceTitle = 'Experience';
   static const String experienceDescription =
       'Since I started my diploma in 2017, I\'ve started to learn and apply my knowledge in different places. So I started working as a freelance solution developer, and with time, I fell in love with different technologies. I received industrial training in my second year, and now I try out my experience.';
   static const String experienceOrg1Title =
       'RV Solution Pvt. Ltd. Noida Utter Pradesh';
   static const String experienceOrg1Role = 'Software Developer';
-  static const String experienceOrg1Years = 'May 2023 - Presents';
+  static const String experienceOrg1Years = 'May 2023 - May 2025';
   static const String experienceOrg1Vales =
       'Android, iOS, Flutter, Dart, UI/UX, Tech Support Assistant, Project Management & Team Management.';
   static const String experienceOrg2Title =
@@ -134,6 +136,11 @@ class DataValues {
   static const String experienceOrg2Years = 'May 2021 - May 2023';
   static const String experienceOrg2Vales =
       'Android, Flutter, Dart, Firebase, Git, REST API, Client Handling, JSON Parsing & UI UX Designing.';
+  static const String experienceOrg3Title = 'The Card Company';
+  static const String experienceOrg3Role = 'Senior Software Developer';
+  static const String experienceOrg3Years = 'May 2025 - Presents';
+  static const String experienceOrg3Vales =
+      'Bill Payments, Bloc, Wallet, Cards, UPI, Remote Config, Native, Performance & Security';
 
   // Contact
   static const String contactTitle = 'Contact';
