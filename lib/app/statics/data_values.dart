@@ -34,6 +34,7 @@ class DataValues {
   static const String navBarAboutMe = 'About Me';
   static const String navBarEducation = 'Education';
   static const String navBarExperience = 'Experience';
+  static const String navBarProjects = 'Projects';
   static const String navBarContactMe = 'Contact Me';
 
   // About me
@@ -140,7 +141,31 @@ class DataValues {
   static const String experienceOrg3Role = 'Senior Software Developer';
   static const String experienceOrg3Years = 'May 2025 - Presents';
   static const String experienceOrg3Vales =
-      'Bill Payments, Bloc, Wallet, Cards, UPI, Remote Config, Native, Performance & Security';
+      'Bill Payments, Bloc, Wallet, Cards, UPI, Remote Config, Native, Performance, Animations & Security';
+
+  // Projects
+  static const String projectsTitle = 'Projects';
+  static const String projectsDescription =
+      'Here are some of the projects I have worked on. These include mobile applications, web platforms, and open-source contributions.';
+  static const String project1Title = 'The Card Co.';
+  static const String project1Description =
+      'The Card Company is an RBI-licensed premium digital wallet designed for families and individuals to manage spending, pay bills, and earn rewards through one secure platform. It offers smart expense tracking, seamless bill payments, premium lifestyle benefits, and Gold Coin rewards on every transaction, making everyday payments simple, convenient, and more rewarding.';
+  static const String project1Technologies =
+      'RBI & PCI-DSS Compliance, Fraud Detection & Risk Monitoring, Financial Data Security & Encryption, Banking APIs & Open Banking, Payment Gateway Integration';
+  static final Uri project1AndroidURL =
+      Uri.parse('https://play.google.com/store/apps/details?id=com.fypmoney');
+static final Uri project1iOSURL =
+      Uri.parse('https://apps.apple.com/in/app/the-card-company/id1573905747');
+
+  static const String project2Title = 'Mera Ration App';
+  static const String project2Description =
+      'Developed a government-integrated application for the One Nation One Ration Card initiative under the National Food Security Act (NFSA), enabling beneficiaries to access subsidized food grains from any Fair Price Shop nationwide using Aadhaar-based biometric authentication via ePoS devices. The system ensured secure, transparent, and portable ration distribution while maintaining subsidy benefits and enabling seamless interstate access for ration card holders.';
+  static const String project2Technologies =
+      'Aadhaar-based Authentication, Data Encryption & Secure API communication, MPIN 2FA';
+  static final Uri project2AndroidURL = Uri.parse(
+      'https://play.google.com/store/apps/details?id=com.nic.onenationonecard');
+  static final Uri project2iOSURL = Uri.parse(
+      'https://apps.apple.com/in/app/mera-ration-app/id6621209637');
 
   // Contact
   static const String contactTitle = 'Contact';
