@@ -16,11 +16,11 @@ class DataValues {
   static Uri diplomaURL = Uri.parse(educationOrg2URL);
   static Uri rvURL = Uri.parse(experienceURL1);
   static Uri skyURL = Uri.parse(experienceURL2);
+  static Uri tccUrl = Uri.parse(experienceURL3);
   static Uri whatsappURL = Uri.parse('https://wa.me/7897430432');
   static Uri telegramURL = Uri.parse('https://t.me/devendramaurya');
   static Uri facebookURL = Uri.parse('https://facebook.com/devender.maurya456');
   static Uri instagramURL = Uri.parse('https://instagram.com/devendra_pbh');
-  static Uri lateNightStudentURL = Uri.parse('https://blog.dileepabandara.dev');
   static Uri emailURL = Uri.parse('mailto:$contactEmail');
   static Uri resumeURL = Uri.parse(
       'https://drive.google.com/file/d/1Gwg-3VHR44nLAf0I_W2jXEPJ_mMBLkY3/view');
@@ -34,6 +34,7 @@ class DataValues {
   static const String navBarAboutMe = 'About Me';
   static const String navBarEducation = 'Education';
   static const String navBarExperience = 'Experience';
+  static const String navBarProjects = 'Projects';
   static const String navBarContactMe = 'Contact Me';
 
   // About me
@@ -50,10 +51,6 @@ class DataValues {
   static const String aboutMeFullNameTitle = 'Full Name';
   static const String aboutMeFullNameDescription = 'Devendra Maurya';
 
-  // static const String aboutMeNwITitle = 'Name with Initials';
-  // static const String aboutMeNwIDescription = 'J.M. Dileepa Lakmal Bandara';
-  // static const String aboutMeFnLTitle = 'First and Last Name';
-  // static const String aboutMeFnLDescription = 'Dileepa Bandara';
   static const String aboutMeDobTitle = 'Birthday';
   static const String aboutMeDobDescription = 'July 21, 2000';
   static const String aboutMeLanguageTitle = 'Languages';
@@ -65,9 +62,9 @@ class DataValues {
   static const String aboutMeGenderDescription = 'Male (He/Him/His)';
   static const String aboutMeLocationTitle = 'Current Locations';
   static const String aboutMeLocationDescription =
-      'Noida Sector-52\nUtter Pradesh India';
+      'Gurgaon Sector-48, Haryana India';
   static const String aboutMeWorkDomainTitle = 'Working Domain';
-  static const String aboutMeWorkDomainDescription = '08:00 - 20:00 (GMT+5:30)';
+  static const String aboutMeWorkDomainDescription = '09:30 - 06:30 (GMT+5:30)';
   static const String aboutMeStudentTitle = 'Computing Student';
   static const String aboutMeStudentDescription =
       'I study computing technologies as a student by focusing on learning how computer systems work, from the physical (hardware) to the apps and programs (software) that users interact with, and I learn all about critical thinking, problem-solving, and analytical research, regardless of whether I apply all the computing principles to solve problems in scenarios.';
@@ -86,8 +83,6 @@ class DataValues {
       'To innovate, solve problems, and contribute meaningfully to humanity with relentless determination.';
   static const String aboutMeBanner = 'You can find my';
   static const String aboutMeBannerTitle = 'public profiles';
-  static const String aboutMeBannerWeb =
-      'Visit profile.dileepabandara.dev to find all my public profiles.';
 
   // Education
   static const String educationTitle = 'Education';
@@ -103,12 +98,8 @@ class DataValues {
   static const String educationOrg1Course2Name =
       'Cloud Computing, Big Data, Discrete Mathematics, Python, Compiler Design';
   static const String educationOrg1Course2Grade =
-      'Passed with 7.5 CGPA, 71.25%';
-  static const String educationOrg1Course2Year = '2013';
-  static const String educationOrg1Course3Name = 'Education Period';
-  static const String educationOrg1Course3Year = 'Secondary: 2008 - 2016';
-  static const String educationOrg1Course3Year2 = 'Primary: 2003 - 2007';
-  static const String educationOrg1URL = 'https://www.bssitm.com';
+      'Passed with 7.16 CGPA, 68.02%';
+  static const String educationOrg1URL = 'https://bssitm.ac.in';
   static const String educationOrg2URL = 'https://www.gpppratapgarh.in';
 
   static const String educationOrg2Title =
@@ -125,24 +116,19 @@ class DataValues {
   static const String educationOrg2Course2Year = '2020 - 2021';
   static const String educationOrg2Course3Name =
       'Diploma in Computer System Design';
-  static const String educationOrg2Course3Grade =
-      'awarded by NIBM - Sri Lanka, 3.75 GPA';
   static const String educationOrg2Course3Year = '2019 - 2020';
-  static const String educationBanner = 'These Are Some Of My Other';
-  static const String educationBannerTitle = 'Online Learning Platforms';
-  static const String educationBannerWeb =
-      'Click here to find out more about my online learning platforms.';
 
   // Experience
   static const String experienceURL1 = 'https://www.rvsolutions.in';
   static const String experienceURL2 = 'https://skyviewads.com';
+  static const String experienceURL3 = 'https://thecardcompany.in/';
   static const String experienceTitle = 'Experience';
   static const String experienceDescription =
       'Since I started my diploma in 2017, I\'ve started to learn and apply my knowledge in different places. So I started working as a freelance solution developer, and with time, I fell in love with different technologies. I received industrial training in my second year, and now I try out my experience.';
   static const String experienceOrg1Title =
       'RV Solution Pvt. Ltd. Noida Utter Pradesh';
   static const String experienceOrg1Role = 'Software Developer';
-  static const String experienceOrg1Years = 'May 2023 - Presents';
+  static const String experienceOrg1Years = 'May 2023 - May 2025';
   static const String experienceOrg1Vales =
       'Android, iOS, Flutter, Dart, UI/UX, Tech Support Assistant, Project Management & Team Management.';
   static const String experienceOrg2Title =
@@ -151,43 +137,35 @@ class DataValues {
   static const String experienceOrg2Years = 'May 2021 - May 2023';
   static const String experienceOrg2Vales =
       'Android, Flutter, Dart, Firebase, Git, REST API, Client Handling, JSON Parsing & UI UX Designing.';
+  static const String experienceOrg3Title = 'The Card Company';
+  static const String experienceOrg3Role = 'Senior Software Developer';
+  static const String experienceOrg3Years = 'May 2025 - Presents';
+  static const String experienceOrg3Vales =
+      'Bill Payments, Bloc, Wallet, Cards, UPI, Remote Config, Native, Performance, Animations & Security';
 
-  // Volunteering
-  static const String volunteeringTitle = 'Volunteering';
-  static const String volunteeringDescription =
-      'Volunteering is an amazing way for me to give back to communities and make a difference. It\'s also a terrific opportunity to meet new people, learn new skills, and gain valuable experience. I do volunteer work for many different social and technical organizations. These are more focused organizations where I am presently volunteering.';
-  static const String volunteeringOrg1Title = 'FlutterScope';
-  static const String volunteeringOrg1Role = 'Content Creator';
-  static const String volunteeringOrg1Years = 'January 2022 - Present';
-  static const String volunteeringOrg1Vales =
-      'FlutterScope was founded to disseminate knowledge about Flutter and related technologies. This community is an educational group that is not affiliated with or otherwise sponsored by Google LLC.';
-  static const String volunteeringOrg2Title = 'Microsoft';
-  static const String volunteeringOrg2Role =
-      'Microsoft Learn Student Ambassador';
-  static const String volunteeringOrg2Years = 'October 2022 - Present';
-  static const String volunteeringOrg2Vales =
-      'Microsoft Learn Student Ambassadors are a global group of campus leaders who are eager to help fellow students, create robust tech communities, and develop technical and career skills for the future.';
-  static const String volunteeringBanner = 'Find more about my';
-  static const String volunteeringBannerTitle = 'volunteering';
-  static const String volunteeringBannerWeb =
-      'Visit volunteer.dileepabandara.dev for more details >>';
+  // Projects
+  static const String projectsTitle = 'Projects';
+  static const String projectsDescription =
+      'Here are some of the projects I have worked on. These include mobile applications, web platforms, and open-source contributions.';
+  static const String project1Title = 'The Card Co.';
+  static const String project1Description =
+      'The Card Company is an RBI-licensed premium digital wallet designed for families and individuals to manage spending, pay bills, and earn rewards through one secure platform. It offers smart expense tracking, seamless bill payments, premium lifestyle benefits, and Gold Coin rewards on every transaction, making everyday payments simple, convenient, and more rewarding.';
+  static const String project1Technologies =
+      'RBI & PCI-DSS Compliance, Fraud Detection & Risk Monitoring, Financial Data Security & Encryption, Banking APIs & Open Banking, Payment Gateway Integration';
+  static final Uri project1AndroidURL =
+      Uri.parse('https://play.google.com/store/apps/details?id=com.fypmoney');
+static final Uri project1iOSURL =
+      Uri.parse('https://apps.apple.com/in/app/the-card-company/id1573905747');
 
-  // TechNotes
-  static const String technotesTitle = 'TechNotes';
-  static const String technotesDescription =
-      'I love creating content as a hobby! It\'s a fantastic outlet for my creativity, and I enjoy expressing myself and connecting with people who share my interests. I have a blog where I can share my written ideas, and a vlog where my voice can be heard. It\'s a great way to connect with others and share my passion for technology and all things digital. Join me on this exciting journey of exploration and discovery in the tech world!';
-  static const String technotesOrg1Title = 'TechNotes by Dileepa | Blog';
-  static const String technotesOrg1Role =
-      'Embark on a journey of discovery and exploration.';
-  static const String technotesOrg1Years = '2023 March - Present';
-  static const String technotesOrg1Vales =
-      'Welcome to my tech blog, where I share my tech notes! As a passionate tech enthusiast, I\'m always on the lookout for the latest and most innovative advancements in the industry, and I can\'t wait to share my findings with you. In this space, we\'ll dive deep into a variety of exciting tech topics, ranging from revolutionary software solutions to groundbreaking ideas and futuristic concepts. Along the way, I\'ll share my personal experiences and provide insights on how these developments impact our world. Join me on this exciting journey of discovery and exploration in the dynamic world of technology through this blog!';
-  static const String technotesOrg2Title = 'TechNotes by Dileepa | Vlog';
-  static const String technotesOrg2Role =
-      'Exploring the frontiers of the computer world.';
-  static const String technotesOrg2Years = 'Coming Soon';
-  static const String technotesOrg2Vales =
-      'Welcome to my vlog, where we\'ll be exploring the fascinating world of technology! Technology is constantly evolving and transforming the world we live in, creating new paths and opportunities for us to explore. In this vlog, I\'ll be sharing my personal journey of discovery and exploration in the tech world, as I learn about the latest advancements and emerging trends in the industry. From cutting-edge software and innovative solutions to groundbreaking ideas and futuristic concepts, we\'ll cover it all in this vlog. So join me on this exciting journey as we discover the ever-changing world of technology together!';
+  static const String project2Title = 'Mera Ration App';
+  static const String project2Description =
+      'Developed a government-integrated application for the One Nation One Ration Card initiative under the National Food Security Act (NFSA), enabling beneficiaries to access subsidized food grains from any Fair Price Shop nationwide using Aadhaar-based biometric authentication via ePoS devices. The system ensured secure, transparent, and portable ration distribution while maintaining subsidy benefits and enabling seamless interstate access for ration card holders.';
+  static const String project2Technologies =
+      'Aadhaar-based Authentication, Data Encryption & Secure API communication, MPIN 2FA';
+  static final Uri project2AndroidURL = Uri.parse(
+      'https://play.google.com/store/apps/details?id=com.nic.onenationonecard');
+  static final Uri project2iOSURL = Uri.parse(
+      'https://apps.apple.com/in/app/mera-ration-app/id6621209637');
 
   // Contact
   static const String contactTitle = 'Contact';

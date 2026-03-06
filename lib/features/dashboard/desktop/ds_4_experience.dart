@@ -21,6 +21,19 @@ class DS4Experience extends StatelessWidget {
             const FrameTitle(
                 title: DataValues.experienceTitle,
                 description: DataValues.experienceDescription),
+            Center(
+              child: ContainerCard(context: context).type3(
+                image: 'tcc_logo',
+                title: DataValues.experienceOrg3Title,
+                role: DataValues.experienceOrg3Role,
+                years: DataValues.experienceOrg3Years,
+                values: DataValues.experienceOrg3Vales,
+                message: DataValues.experienceURL3.toString(),
+                url: DataValues.tccUrl,
+                isButtonEnabled: true,
+              ),
+            ),
+            const SizedBox(height: 80.0),
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               crossAxisAlignment: CrossAxisAlignment.start,

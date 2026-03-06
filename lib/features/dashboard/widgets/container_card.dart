@@ -2,6 +2,7 @@ import 'dart:developer';
 
 import 'package:flutter/material.dart';
 import 'package:url_launcher/url_launcher.dart';
+import 'package:url_launcher/url_launcher_string.dart';
 
 import '../widgets/text_pairs.dart';
 import 'button_text.dart';
@@ -281,9 +282,17 @@ class ContainerCard {
                 SelectableText(title,
                     style: TextStyle(
                       fontSize:
-                          Theme.of(context).textTheme.titleMedium!.fontSize,
+                      Theme
+                          .of(context)
+                          .textTheme
+                          .titleMedium!
+                          .fontSize,
                       fontWeight:
-                          Theme.of(context).textTheme.headlineSmall!.fontWeight,
+                      Theme
+                          .of(context)
+                          .textTheme
+                          .headlineSmall!
+                          .fontWeight,
                       // color: AppThemeData.textPrimary,
                     )),
                 const SizedBox(height: 10.0),
@@ -306,6 +315,96 @@ class ContainerCard {
               text: 'View More >>',
               message: message,
               url: url,
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+
+  Widget type6({
+    required String image,
+    required String title,
+    required String description,
+    required String skills,
+    String? androidLink,
+    String? iOSLink,
+  }) {
+    return Container(
+      decoration: BoxDecoration(
+        // color: AppThemeData.cardGrey,
+        borderRadius: BorderRadius.circular(10.0),
+        boxShadow: [
+          BoxShadow(
+            color: Colors.black.withOpacity(0.2),
+            spreadRadius: 2,
+            blurRadius: 5,
+            offset: const Offset(0, 3), // changes position of shadow
+          ),
+        ],
+      ),
+      child: Padding(
+        padding: const EdgeInsets.all(30.0),
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Image.asset('assets/images/$image.png', height: 70.0),
+                const SizedBox(height: 20.0),
+                Row(
+                  children: [
+                    Expanded(
+                      child: SelectableText(title,
+                          style: TextStyle(
+                            fontSize:
+                                Theme.of(context).textTheme.titleMedium!.fontSize,
+                            fontWeight:
+                                Theme.of(context).textTheme.headlineSmall!.fontWeight,
+                            // color: AppThemeData.textPrimary,
+                          )),
+                    ),
+                    if (androidLink != null) ...[
+                      IconButton(
+                        onPressed: () async{
+                          if (!await launchUrlString(androidLink)) {
+                          throw 'Could not launch $androidLink';
+                          }
+                          log("Direct to: $androidLink");
+                        },
+                          icon: Icon(Icons.android_rounded, color: Colors.green, size: 28)),
+                      const SizedBox(width: 8),
+                    ],
+                    if (iOSLink != null) ...[
+                      IconButton(
+                          onPressed: () async{
+                            if (!await launchUrlString(iOSLink)) {
+                            throw 'Could not launch $iOSLink';
+                            }
+                            log("Direct to: $iOSLink");
+                          },
+                          icon: const Icon(Icons.apple_rounded, size: 28)),
+                    ],
+                  ],
+                ),
+                const SizedBox(height: 10.0),
+                SelectableText(
+                  description,
+                  style: TextStyle(
+                    fontSize: Theme.of(context).textTheme.labelLarge!.fontSize,
+                    fontWeight: Theme.of(context).textTheme.labelLarge!.fontWeight,
+                  ),
+                ),
+                const SizedBox(height: 20.0),
+                SelectableText(
+                  skills,
+                  style: Theme.of(context).textTheme.labelLarge?.copyWith(
+                    fontStyle: FontStyle.italic,
+                  ),
+                )
+              ],
             ),
           ],
         ),

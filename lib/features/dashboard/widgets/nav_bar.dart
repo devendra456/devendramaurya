@@ -35,6 +35,15 @@ class NavBar {
           ),
           message: 'Go to ${DataValues.navBarExperience} section',
         ),
+        const SizedBox(width: 20.0),
+        ButtonTextLarge(
+          text: DataValues.navBarProjects,
+          onPressed: () => Scrollable.ensureVisible(
+            KeyHolders.projectsKey.currentContext!,
+            duration: const Duration(milliseconds: 1000),
+          ),
+          message: 'Go to ${DataValues.navBarProjects} section',
+        ),
         /*const SizedBox(width: 20.0),
         ButtonTextLarge(
           text: DataValues.navBarVolunteering,
@@ -121,6 +130,15 @@ class NavBar {
               duration: const Duration(milliseconds: 1000),
             ),
             message: 'Go to ${DataValues.navBarExperience} section',
+          ),
+          const SizedBox(height: 20.0),
+          ButtonTextLarge(
+            text: DataValues.navBarProjects,
+            onPressed: () => Scrollable.ensureVisible(
+              KeyHolders.projectsKey.currentContext!,
+              duration: const Duration(milliseconds: 1000),
+            ),
+            message: 'Go to ${DataValues.navBarProjects} section',
           ),
           /*const SizedBox(height: 20.0),
           ButtonTextLarge(

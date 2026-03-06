@@ -10,12 +10,14 @@ import 'desktop/ds_1_header.dart';
 import 'desktop/ds_2_about_me.dart';
 import 'desktop/ds_3_education.dart';
 import 'desktop/ds_4_experience.dart';
+import 'desktop/ds_5_projects.dart';
 import 'desktop/ds_7_contact.dart';
 import 'desktop/ds_8_footer.dart';
 import 'mobile/ms_1_header.dart';
 import 'mobile/ms_2_about_me.dart';
 import 'mobile/ms_3_education.dart';
 import 'mobile/ms_4_experience.dart';
+import 'mobile/ms_5_projects.dart';
 import 'mobile/ms_7_contact.dart';
 import 'mobile/ms_8_footer.dart';
 import 'widgets/nav_bar.dart';
@@ -74,6 +76,7 @@ class _DashboardScreenState extends State<DashboardScreen> {
           DS2AboutMe(),
           DS3Education(),
           DS4Experience(),
+          DS5Projects(),
           DS7Contact(),
           DS8Footer(),
         ],
@@ -89,6 +92,7 @@ class _DashboardScreenState extends State<DashboardScreen> {
           MS2AboutMe(),
           MS3Education(),
           MS4Experience(),
+          MS5Projects(),
           MS7Contact(),
           MS8Footer(),
         ],
