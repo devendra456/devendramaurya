@@ -19,18 +19,10 @@ class ContainerCard {
     required String message,
     required Uri url,
   }) {
-    return Container(
-      decoration: BoxDecoration(
-        // color: AppThemeData.cardGrey,
+    return Card(
+      margin: EdgeInsets.zero,
+      shape: RoundedRectangleBorder(
         borderRadius: BorderRadius.circular(10.0),
-        boxShadow: [
-          BoxShadow(
-            color: Colors.black.withOpacity(0.2),
-            spreadRadius: 2,
-            blurRadius: 5,
-            offset: const Offset(0, 3), // changes position of shadow
-          ),
-        ],
       ),
       child: Padding(
         padding: const EdgeInsets.all(30.0),
@@ -76,18 +68,10 @@ class ContainerCard {
     required String message,
     required Uri url,
   }) {
-    return Container(
-      decoration: BoxDecoration(
-        // color: AppThemeData.cardGrey,
+    return Card(
+      margin: EdgeInsets.zero,
+      shape: RoundedRectangleBorder(
         borderRadius: BorderRadius.circular(10.0),
-        boxShadow: [
-          BoxShadow(
-            color: Colors.black.withOpacity(0.2),
-            spreadRadius: 2,
-            blurRadius: 5,
-            offset: const Offset(0, 3), // changes position of shadow
-          ),
-        ],
       ),
       child: Padding(
         padding: const EdgeInsets.all(30.0),
@@ -153,18 +137,10 @@ class ContainerCard {
     required Uri url,
     required bool isButtonEnabled,
   }) {
-    return Container(
-      decoration: BoxDecoration(
-        // color: AppThemeData.cardGrey,
+    return Card(
+      margin: EdgeInsets.zero,
+      shape: RoundedRectangleBorder(
         borderRadius: BorderRadius.circular(10.0),
-        boxShadow: [
-          BoxShadow(
-            color: Colors.black.withOpacity(0.2),
-            spreadRadius: 2,
-            blurRadius: 5,
-            offset: const Offset(0, 3), // changes position of shadow
-          ),
-        ],
       ),
       child: Padding(
         padding: const EdgeInsets.all(30.0),
@@ -255,18 +231,10 @@ class ContainerCard {
     required String message,
     required Uri url,
   }) {
-    return Container(
-      decoration: BoxDecoration(
-        // color: AppThemeData.cardGrey,
+    return Card(
+      margin: EdgeInsets.zero,
+      shape: RoundedRectangleBorder(
         borderRadius: BorderRadius.circular(10.0),
-        boxShadow: [
-          BoxShadow(
-            color: Colors.black.withOpacity(0.2),
-            spreadRadius: 2,
-            blurRadius: 5,
-            offset: const Offset(0, 3), // changes position of shadow
-          ),
-        ],
       ),
       child: Padding(
         padding: const EdgeInsets.all(30.0),
@@ -330,18 +298,10 @@ class ContainerCard {
     String? androidLink,
     String? iOSLink,
   }) {
-    return Container(
-      decoration: BoxDecoration(
-        // color: AppThemeData.cardGrey,
+    return Card(
+      margin: EdgeInsets.zero,
+      shape: RoundedRectangleBorder(
         borderRadius: BorderRadius.circular(10.0),
-        boxShadow: [
-          BoxShadow(
-            color: Colors.black.withOpacity(0.2),
-            spreadRadius: 2,
-            blurRadius: 5,
-            offset: const Offset(0, 3), // changes position of shadow
-          ),
-        ],
       ),
       child: Padding(
         padding: const EdgeInsets.all(30.0),

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 import '../../../app/statics/data_values.dart';
 import 'button_icon.dart';
@@ -12,25 +13,25 @@ class SocialProfiles extends StatelessWidget {
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
         const SizedBox(width: 10.0),
-        ButtonIcon(name: 'email', url: DataValues.emailURL).returnButton(),
+        ButtonIcon(icon: FontAwesomeIcons.envelope, url: DataValues.emailURL).returnButton(),
         const SizedBox(width: 10.0),
-        ButtonIcon(name: 'github', url: DataValues.githubURL).returnButton(),
+        ButtonIcon(icon: FontAwesomeIcons.github, url: DataValues.githubURL).returnButton(),
         const SizedBox(width: 10.0),
-        ButtonIcon(name: 'linkedin', url: DataValues.linkedinURL)
+        ButtonIcon(icon: FontAwesomeIcons.linkedin, url: DataValues.linkedinURL)
             .returnButton(),
         const SizedBox(width: 10.0),
-        ButtonIcon(name: 'twitter', url: DataValues.twitterURL).returnButton(),
+        ButtonIcon(icon: FontAwesomeIcons.xTwitter, url: DataValues.twitterURL).returnButton(),
         const SizedBox(width: 10.0),
-        ButtonIcon(name: 'whatsapp', url: DataValues.whatsappURL)
+        ButtonIcon(icon: FontAwesomeIcons.whatsapp, url: DataValues.whatsappURL)
             .returnButton(),
         const SizedBox(width: 10.0),
-        ButtonIcon(name: 'telegram', url: DataValues.telegramURL)
+        ButtonIcon(icon: FontAwesomeIcons.telegram, url: DataValues.telegramURL)
             .returnButton(),
         const SizedBox(width: 10.0),
-        ButtonIcon(name: 'facebook', url: DataValues.facebookURL)
+        ButtonIcon(icon: FontAwesomeIcons.facebook, url: DataValues.facebookURL)
             .returnButton(),
         const SizedBox(width: 10.0),
-        ButtonIcon(name: 'instagram', url: DataValues.instagramURL)
+        ButtonIcon(icon: FontAwesomeIcons.instagram, url: DataValues.instagramURL)
             .returnButton(),
       ],
     );
