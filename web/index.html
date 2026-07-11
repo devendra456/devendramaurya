@@ -108,7 +108,7 @@
     _flutter.loader.load({
         serviceWorker:{
             serviceWorkerVersion: serviceWorkerVersion,
-        }
+        },
       onEntrypointLoaded: async function(engineInitializer) {
         const appRunner = await engineInitializer.initializeEngine();
         await appRunner.runApp();
