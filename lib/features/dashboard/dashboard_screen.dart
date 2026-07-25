@@ -101,22 +101,24 @@ class _Hero extends StatelessWidget {
   Widget build(BuildContext context) {
     final compact = MediaQuery.sizeOf(context).width < 760;
     final color = Theme.of(context).colorScheme.primary;
+    final infoColumn = _Reveal(delay: 0, child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
+      _Pill(label: PortfolioTodo.heroEyebrow),
+      const SizedBox(height: 22),
+      Text(PortfolioTodo.headline, style: Theme.of(context).textTheme.displaySmall?.copyWith(fontWeight: FontWeight.w900, height: 1.05)),
+      const SizedBox(height: 18),
+      Text(PortfolioTodo.intro, style: Theme.of(context).textTheme.titleMedium?.copyWith(height: 1.55)),
+      const SizedBox(height: 28),
+      Wrap(spacing: 12, runSpacing: 12, children: [FilledButton.icon(onPressed: onProjects, icon: const Icon(Icons.grid_view_rounded), label: const Text('View projects')), OutlinedButton.icon(onPressed: onContact, icon: const Icon(Icons.mail_outline_rounded), label: const Text('Contact me')), TextButton.icon(onPressed: onResume, icon: const Icon(Icons.download_rounded), label: const Text('Résumé'))]),
+      const SizedBox(height: 25),
+      Row(children: [Icon(Icons.location_on_outlined, size: 18, color: color), const SizedBox(width: 6), Text(PortfolioTodo.location)]),
+    ]));
+
     return Container(
       decoration: BoxDecoration(gradient: LinearGradient(colors: [color.withOpacity(.16), Theme.of(context).scaffoldBackgroundColor], begin: Alignment.topLeft, end: Alignment.bottomRight)),
       child: Center(child: ConstrainedBox(constraints: const BoxConstraints(maxWidth: 1160), child: Padding(
         padding: const EdgeInsets.fromLTRB(24, 70, 24, 58),
         child: Flex(direction: compact ? Axis.vertical : Axis.horizontal, crossAxisAlignment: CrossAxisAlignment.start, children: [
-          Flexible(flex: compact ? 1 : 6, fit: compact ? FlexFit.loose : FlexFit.tight, child: _Reveal(delay: 0, child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
-            _Pill(label: PortfolioTodo.heroEyebrow),
-            const SizedBox(height: 22),
-            Text(PortfolioTodo.headline, style: Theme.of(context).textTheme.displaySmall?.copyWith(fontWeight: FontWeight.w900, height: 1.05)),
-            const SizedBox(height: 18),
-            Text(PortfolioTodo.intro, style: Theme.of(context).textTheme.titleMedium?.copyWith(height: 1.55)),
-            const SizedBox(height: 28),
-            Wrap(spacing: 12, runSpacing: 12, children: [FilledButton.icon(onPressed: onProjects, icon: const Icon(Icons.grid_view_rounded), label: const Text('View projects')), OutlinedButton.icon(onPressed: onContact, icon: const Icon(Icons.mail_outline_rounded), label: const Text('Contact me')), TextButton.icon(onPressed: onResume, icon: const Icon(Icons.download_rounded), label: const Text('Résumé'))]),
-            const SizedBox(height: 25),
-            Row(children: [Icon(Icons.location_on_outlined, size: 18, color: color), const SizedBox(width: 6), Text(PortfolioTodo.location)]),
-          ]))),
+          compact ? infoColumn : Flexible(flex: 6, fit: FlexFit.tight, child: infoColumn),
           SizedBox(width: compact ? 0 : 62, height: compact ? 40 : 0),
           _Reveal(delay: 120, child: SizedBox(width: compact ? 180 : 310, child: AspectRatio(aspectRatio: .86, child: ClipRRect(borderRadius: BorderRadius.circular(32), child: Image.network(PortfolioTodo.profileImage, fit: BoxFit.cover, errorBuilder: (_, __, ___) => const ColoredBox(color: Color(0xFF202938), child: Icon(Icons.person_rounded, size: 96))))))),
         ]),
@@ -133,7 +135,16 @@ class _About extends StatelessWidget {
     const SizedBox(height: 30),
     LayoutBuilder(builder: (context, constraints) => Wrap(spacing: 14, runSpacing: 14, children: PortfolioTodo.metrics.map((metric) => SizedBox(width: constraints.maxWidth > 700 ? (constraints.maxWidth - 42) / 4 : (constraints.maxWidth - 14) / 2, child: _MetricCard(metric))).toList())),
     const SizedBox(height: 32),
-    Wrap(spacing: 18, runSpacing: 18, children: PortfolioTodo.skills.map((group) => SizedBox(width: 260, child: _SkillCard(group))).toList()),
+    LayoutBuilder(
+      builder: (context, constraints) {
+        final cardWidth = constraints.maxWidth > 600 ? 260.0 : constraints.maxWidth;
+        return Wrap(
+          spacing: 18,
+          runSpacing: 18,
+          children: PortfolioTodo.skills.map((group) => SizedBox(width: cardWidth, child: _SkillCard(group))).toList(),
+        );
+      },
+    ),
   ]);
 }
 
@@ -147,13 +158,18 @@ class _Services extends StatelessWidget {
         children: [
           _Heading('How I can help', 'Practical mobile engineering for ambitious products.'),
           const SizedBox(height: 24),
-          Wrap(
-            spacing: 18,
-            runSpacing: 18,
-            children: PortfolioTodo.services.map((service) => SizedBox(
-              width: 340,
-              child: Card(child: Padding(padding: const EdgeInsets.all(22), child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [Icon(Icons.auto_awesome_rounded, color: Theme.of(context).colorScheme.primary), const SizedBox(height: 16), Text(service.title, style: Theme.of(context).textTheme.titleLarge?.copyWith(fontWeight: FontWeight.w800)), const SizedBox(height: 8), Text(service.description, style: const TextStyle(height: 1.5))]))),
-            )).toList(),
+          LayoutBuilder(
+            builder: (context, constraints) {
+              final cardWidth = constraints.maxWidth > 750 ? 340.0 : constraints.maxWidth;
+              return Wrap(
+                spacing: 18,
+                runSpacing: 18,
+                children: PortfolioTodo.services.map((service) => SizedBox(
+                  width: cardWidth,
+                  child: Card(child: Padding(padding: const EdgeInsets.all(22), child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [Icon(Icons.auto_awesome_rounded, color: Theme.of(context).colorScheme.primary), const SizedBox(height: 16), Text(service.title, style: Theme.of(context).textTheme.titleLarge?.copyWith(fontWeight: FontWeight.w800)), const SizedBox(height: 8), Text(service.description, style: const TextStyle(height: 1.5))]))),
+                )).toList(),
+              );
+            },
           ),
         ],
       );
@@ -177,11 +193,52 @@ class _Testimonials extends StatelessWidget {
   Widget build(BuildContext context) => Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
     _Heading('Words from collaborators', 'Add approved feedback here to make the work more credible.'),
     const SizedBox(height: 20),
-    Wrap(spacing: 18, runSpacing: 18, children: PortfolioTodo.testimonials.map((item) => SizedBox(width: 440, child: Card(child: Padding(padding: const EdgeInsets.all(22), child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [const Icon(Icons.format_quote_rounded, size: 34), Text(item.quote, style: const TextStyle(height: 1.55, fontStyle: FontStyle.italic)), const SizedBox(height: 16), Text(item.name, style: const TextStyle(fontWeight: FontWeight.w800)), Text(item.role)]))))).toList()),
+    LayoutBuilder(
+      builder: (context, constraints) {
+        final cardWidth = constraints.maxWidth > 950 ? 440.0 : constraints.maxWidth;
+        return Wrap(
+          spacing: 18,
+          runSpacing: 18,
+          children: PortfolioTodo.testimonials.map((item) => SizedBox(
+            width: cardWidth,
+            child: Card(child: Padding(padding: const EdgeInsets.all(22), child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [const Icon(Icons.format_quote_rounded, size: 34), Text(item.quote, style: const TextStyle(height: 1.55, fontStyle: FontStyle.italic)), const SizedBox(height: 16), Text(item.name, style: const TextStyle(fontWeight: FontWeight.w800)), Text(item.role)]))),
+          )).toList(),
+        );
+      },
+    ),
   ]);
 }
 
-class _Contact extends StatelessWidget { final ValueChanged<String> onOpen; const _Contact({required this.onOpen}); @override Widget build(BuildContext context) => Card(color: Theme.of(context).colorScheme.primaryContainer, child: Padding(padding: const EdgeInsets.all(30), child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [_Heading('Let’s build something useful.', 'Tell me what you are working on, and I’ll get back within 12–24 hours.'), const SizedBox(height: 20), Wrap(spacing: 12, runSpacing: 12, children: [FilledButton.icon(onPressed: () => onOpen('mailto:${PortfolioTodo.email}'), icon: const Icon(Icons.email_outlined), label: const Text('Email me')), OutlinedButton.icon(onPressed: () => onOpen(PortfolioTodo.whatsappUrl), icon: const Icon(Icons.chat_bubble_outline_rounded), label: const Text('WhatsApp')), if (PortfolioTodo.bookingUrl.isNotEmpty) OutlinedButton.icon(onPressed: () => onOpen(PortfolioTodo.bookingUrl), icon: const Icon(Icons.calendar_month_outlined), label: const Text('Book a call'))])]))); }
+class _Contact extends StatelessWidget {
+  final ValueChanged<String> onOpen;
+  const _Contact({required this.onOpen});
+  @override
+  Widget build(BuildContext context) {
+    final compact = MediaQuery.sizeOf(context).width < 760;
+    return Card(
+      color: Theme.of(context).colorScheme.primaryContainer,
+      child: Padding(
+        padding: EdgeInsets.all(compact ? 20.0 : 30.0),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            _Heading('Let’s build something useful.', 'Tell me what you are working on, and I’ll get back within 12–24 hours.'),
+            const SizedBox(height: 20),
+            Wrap(
+              spacing: 12,
+              runSpacing: 12,
+              children: [
+                FilledButton.icon(onPressed: () => onOpen('mailto:${PortfolioTodo.email}'), icon: const Icon(Icons.email_outlined), label: const Text('Email me')),
+                OutlinedButton.icon(onPressed: () => onOpen(PortfolioTodo.whatsappUrl), icon: const Icon(Icons.chat_bubble_outline_rounded), label: const Text('WhatsApp')),
+                if (PortfolioTodo.bookingUrl.isNotEmpty) OutlinedButton.icon(onPressed: () => onOpen(PortfolioTodo.bookingUrl), icon: const Icon(Icons.calendar_month_outlined), label: const Text('Book a call')),
+              ],
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+}
 class _Footer extends StatelessWidget { const _Footer(); @override Widget build(BuildContext context) => Padding(padding: const EdgeInsets.all(28), child: Center(child: Text('© ${DateTime.now().year} ${PortfolioTodo.name} · Built with Flutter'))); }
 class _Heading extends StatelessWidget { final String eyebrow, title; const _Heading(this.eyebrow, this.title); @override Widget build(BuildContext context) => Column(crossAxisAlignment: CrossAxisAlignment.start, children: [Text(eyebrow.toUpperCase(), style: TextStyle(fontWeight: FontWeight.w800, letterSpacing: 1.3, color: Theme.of(context).colorScheme.primary)), const SizedBox(height: 8), Text(title, style: Theme.of(context).textTheme.headlineMedium?.copyWith(fontWeight: FontWeight.w900, height: 1.15))]); }
 class _Pill extends StatelessWidget { final String label; const _Pill({required this.label}); @override Widget build(BuildContext context) => DecoratedBox(decoration: BoxDecoration(color: Theme.of(context).colorScheme.primary.withOpacity(.12), borderRadius: BorderRadius.circular(30)), child: Padding(padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 6), child: Text(label, style: TextStyle(fontSize: 11, fontWeight: FontWeight.w800, color: Theme.of(context).colorScheme.primary)))); }

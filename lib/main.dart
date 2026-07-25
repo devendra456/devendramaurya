@@ -12,13 +12,17 @@ import 'app/theme/theme_utils.dart';
 import 'features/dashboard/dashboard_screen.dart';
 
 void main() async {
-print("MAIN CALLED");
   WidgetsBinding widgetsBinding = WidgetsFlutterBinding.ensureInitialized();
   // FlutterNativeSplash.preserve(widgetsBinding: widgetsBinding);
   // Firebase is currently configured for the deployed web portfolio only.
   // Native Firebase options can be added later with the FlutterFire CLI.
-  if (kIsWeb) {
-    await Firebase.initializeApp(options: DefaultFirebaseOptions.currentPlatform);
+  if (kIsWeb && !kDebugMode) {
+    try {
+      await Firebase.initializeApp(options: DefaultFirebaseOptions.currentPlatform)
+          .timeout(const Duration(seconds: 4));
+    } catch (e) {
+      print("Firebase initialization timed out or failed: $e");
+    }
   }
   usePathUrlStrategy();
   runApp(const MyApp());
