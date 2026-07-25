@@ -17,11 +17,11 @@ dependencies:
     sdk: flutter
 
   cupertino_icons: ^1.0.9
-  google_fonts: ^8.1.0
+  google_fonts: ^8.2.0
   flutter_bloc: ^9.1.1
   url_launcher: ^6.3.2
-  flutter_native_splash: ^2.4.8
-  firebase_core: ^4.11.0
+#  flutter_native_splash: ^2.4.8
+  firebase_core: ^4.12.1
   font_awesome_flutter: ^11.0.0
 
 dev_dependencies:
@@ -30,9 +30,9 @@ dev_dependencies:
 
   flutter_lints: ^6.0.0
 
-flutter_native_splash:
-  image: assets/images/logo.png
-  color: "#000000"
+#flutter_native_splash:
+#  image: assets/images/logo.png
+#  color: "#000000"
 
 flutter:
   assets:

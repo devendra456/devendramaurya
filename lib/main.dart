@@ -4,7 +4,7 @@ import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:flutter_native_splash/flutter_native_splash.dart';
+// import 'package:flutter_native_splash/flutter_native_splash.dart';
 import 'package:flutter_web_plugins/url_strategy.dart';
 
 import 'app/theme/bloc/theme_bloc/theme_bloc.dart';
@@ -12,8 +12,9 @@ import 'app/theme/theme_utils.dart';
 import 'features/dashboard/dashboard_screen.dart';
 
 void main() async {
+print("MAIN CALLED");
   WidgetsBinding widgetsBinding = WidgetsFlutterBinding.ensureInitialized();
-  FlutterNativeSplash.preserve(widgetsBinding: widgetsBinding);
+  // FlutterNativeSplash.preserve(widgetsBinding: widgetsBinding);
   // Firebase is currently configured for the deployed web portfolio only.
   // Native Firebase options can be added later with the FlutterFire CLI.
   if (kIsWeb) {
@@ -21,7 +22,7 @@ void main() async {
   }
   usePathUrlStrategy();
   runApp(const MyApp());
-  FlutterNativeSplash.remove();
+  // FlutterNativeSplash.remove();
 }
 
 class MyApp extends StatelessWidget {
