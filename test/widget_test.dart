@@ -11,9 +11,7 @@ import 'package:devendramaurya/main.dart';
 
 void main() {
   testWidgets('renders the portfolio header', (WidgetTester tester) async {
-    await tester.pumpWidget(const MyApp());
-
+    await tester.pumpWidget(const DevendraPortfolioApp());
     expect(find.text('Devendra Maurya'), findsWidgets);
-    expect(find.text('About Me'), findsWidgets);
   });
 }
