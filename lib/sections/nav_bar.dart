@@ -3,7 +3,6 @@ import 'package:flutter/material.dart';
 import '../core/constants/portfolio_links.dart';
 import '../core/theme/app_colors.dart';
 import '../widgets/profile_photo_dialog.dart';
-import '../widgets/pulsing_status_dot.dart';
 
 // ---------------------------------------------------------------------------
 // Navigation Bar
@@ -104,25 +103,16 @@ class NavBar extends StatelessWidget {
                                   color: kWhite,
                                 ),
                               ),
-                              Row(
-                                mainAxisSize: MainAxisSize.min,
-                                children: [
-                                  PulsingStatusDot(color: kGreen, size: isMobile ? 6 : 7),
-                                  const SizedBox(width: 5),
-                                  Flexible(
-                                    child: Text(
-                                      'Mobile App Specialist',
-                                      maxLines: 1,
-                                      overflow: TextOverflow.ellipsis,
-                                      style: TextStyle(
-                                        fontSize: isMobile ? 10.5 : 11,
-                                        fontWeight: FontWeight.w600,
-                                        color: kMutedLight.withValues(alpha: 0.85),
-                                        letterSpacing: 0.2,
-                                      ),
-                                    ),
-                                  ),
-                                ],
+                              Text(
+                                'Mobile App Specialist',
+                                maxLines: 1,
+                                overflow: TextOverflow.ellipsis,
+                                style: TextStyle(
+                                  fontSize: isMobile ? 10.5 : 11,
+                                  fontWeight: FontWeight.w600,
+                                  color: kMutedLight.withValues(alpha: 0.85),
+                                  letterSpacing: 0.2,
+                                ),
                               ),
                             ],
                           ),

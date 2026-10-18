@@ -647,6 +647,7 @@ class PortfolioTodo {
       'Dart',
       'Android',
       'iOS',
+      'Kotlin',
       'Native Integrations',
     ]),
     SkillGroup('Architecture & APIs', [

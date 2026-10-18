@@ -90,31 +90,18 @@ class _ScrollToTopButtonState extends State<ScrollToTopButton> {
               child: GestureDetector(
                 onTap: _scrollToTop,
                 child: SizedBox(
-                  width: 52,
-                  height: 52,
+                  width: 46,
+                  height: 46,
                   child: Stack(
                     alignment: Alignment.center,
                     children: [
-                      // Circular Scroll Progress Ring
-                      SizedBox(
-                        width: 50,
-                        height: 50,
-                        child: CircularProgressIndicator(
-                          value: _scrollProgress,
-                          strokeWidth: 2.2,
-                          backgroundColor: Colors.white.withValues(alpha: 0.12),
-                          valueColor: AlwaysStoppedAnimation<Color>(
-                            _isHovered ? kCyan : const Color(0xFF818CF8),
-                          ),
-                        ),
-                      ),
                       // Glassmorphic Button Body
                       AnimatedContainer(
                         duration: const Duration(milliseconds: 200),
-                        width: 42,
-                        height: 42,
+                        width: 46,
+                        height: 46,
                         decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(12),
+                          borderRadius: BorderRadius.circular(13),
                           gradient: LinearGradient(
                             colors: _isHovered
                                 ? const [Color(0xFF818CF8), Color(0xFF22D3EE)]
@@ -131,10 +118,6 @@ class _ScrollToTopButtonState extends State<ScrollToTopButton> {
                               offset: const Offset(0, 3),
                             ),
                           ],
-                          border: Border.all(
-                            color: Colors.white.withValues(alpha: _isHovered ? 0.45 : 0.25),
-                            width: 1.1,
-                          ),
                         ),
                         child: Center(
                           child: AnimatedSlide(
@@ -143,7 +126,28 @@ class _ScrollToTopButtonState extends State<ScrollToTopButton> {
                             child: const Icon(
                               Icons.keyboard_arrow_up_rounded,
                               color: Colors.white,
-                              size: 24,
+                              size: 26,
+                            ),
+                          ),
+                        ),
+                      ),
+                      // Progress indicator drawn directly on the button's rounded rectangular border
+                      Positioned.fill(
+                        child: IgnorePointer(
+                          child: CustomPaint(
+                            painter: _RoundedBorderProgressPainter(
+                              progress: _scrollProgress,
+                              strokeWidth: 2.6,
+                              radius: 13,
+                              trackColor: Colors.white.withValues(alpha: _isHovered ? 0.35 : 0.22),
+                              progressColor: Colors.white,
+                              progressGradient: LinearGradient(
+                                colors: _isHovered
+                                    ? const [Colors.white, Color(0xFFE0F2FE)]
+                                    : const [Colors.white, Color(0xFF67E8F9)],
+                                begin: Alignment.topCenter,
+                                end: Alignment.bottomCenter,
+                              ),
                             ),
                           ),
                         ),
@@ -159,3 +163,99 @@ class _ScrollToTopButtonState extends State<ScrollToTopButton> {
     );
   }
 }
+
+/// Custom painter that draws a progress indicator along the perimeter of a rounded rectangle.
+class _RoundedBorderProgressPainter extends CustomPainter {
+  final double progress;
+  final double strokeWidth;
+  final double radius;
+  final Color trackColor;
+  final Color progressColor;
+  final Gradient? progressGradient;
+
+  _RoundedBorderProgressPainter({
+    required this.progress,
+    required this.strokeWidth,
+    required this.radius,
+    required this.trackColor,
+    required this.progressColor,
+    this.progressGradient,
+  });
+
+  @override
+  void paint(Canvas canvas, Size size) {
+    final strokeOffset = strokeWidth / 2;
+    final rect = Rect.fromLTWH(
+      strokeOffset,
+      strokeOffset,
+      size.width - strokeWidth,
+      size.height - strokeWidth,
+    );
+    final r = (radius - strokeOffset > 0) ? radius - strokeOffset : radius;
+    final rrect = RRect.fromRectAndRadius(rect, Radius.circular(r));
+
+    // 1. Draw resting background track border
+    final trackPaint = Paint()
+      ..color = trackColor
+      ..style = PaintingStyle.stroke
+      ..strokeWidth = strokeWidth;
+    canvas.drawRRect(rrect, trackPaint);
+
+    if (progress <= 0.001) return;
+
+    // 2. Prepare progress paint
+    final progressPaint = Paint()
+      ..style = PaintingStyle.stroke
+      ..strokeCap = StrokeCap.round
+      ..strokeJoin = StrokeJoin.round
+      ..strokeWidth = strokeWidth;
+
+    if (progressGradient != null) {
+      progressPaint.shader = progressGradient!.createShader(rect);
+    } else {
+      progressPaint.color = progressColor;
+    }
+
+    if (progress >= 0.995) {
+      canvas.drawRRect(rrect, progressPaint);
+      return;
+    }
+
+    // 3. Construct clockwise path starting from top-center
+    final path = Path();
+    final top = rect.top;
+    final bottom = rect.bottom;
+    final left = rect.left;
+    final right = rect.right;
+    final midX = (left + right) / 2;
+
+    path.moveTo(midX, top);
+    path.lineTo(right - r, top);
+    path.arcToPoint(Offset(right, top + r), radius: Radius.circular(r));
+    path.lineTo(right, bottom - r);
+    path.arcToPoint(Offset(right - r, bottom), radius: Radius.circular(r));
+    path.lineTo(left + r, bottom);
+    path.arcToPoint(Offset(left, bottom - r), radius: Radius.circular(r));
+    path.lineTo(left, top + r);
+    path.arcToPoint(Offset(left + r, top), radius: Radius.circular(r));
+    path.lineTo(midX, top);
+
+    final metrics = path.computeMetrics().toList();
+    if (metrics.isEmpty) return;
+
+    final metric = metrics.first;
+    final sweepDistance = metric.length * progress.clamp(0.0, 1.0);
+    final progressPath = metric.extractPath(0.0, sweepDistance);
+    canvas.drawPath(progressPath, progressPaint);
+  }
+
+  @override
+  bool shouldRepaint(covariant _RoundedBorderProgressPainter oldDelegate) {
+    return oldDelegate.progress != progress ||
+        oldDelegate.strokeWidth != strokeWidth ||
+        oldDelegate.radius != radius ||
+        oldDelegate.trackColor != trackColor ||
+        oldDelegate.progressColor != progressColor;
+  }
+}
+

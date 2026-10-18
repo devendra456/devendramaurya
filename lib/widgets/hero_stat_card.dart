@@ -50,9 +50,8 @@ class _HeroStatCardState extends State<HeroStatCard> {
         duration: const Duration(milliseconds: 220),
         curve: Curves.easeOutCubic,
         transform: Matrix4.translationValues(0, _isHovered ? -5 : 0, 0),
-        width: 128,
-        height: 74,
-        padding: const EdgeInsets.symmetric(horizontal: 13, vertical: 10),
+        constraints: const BoxConstraints(minWidth: 128, minHeight: 74),
+        padding: const EdgeInsets.symmetric(horizontal: 13, vertical: 8),
         decoration: BoxDecoration(
           color: _isHovered ? kPanelAlt : kPanel.withValues(alpha: 0.85),
           borderRadius: BorderRadius.circular(14),
@@ -79,6 +78,7 @@ class _HeroStatCardState extends State<HeroStatCard> {
                 ],
         ),
         child: Column(
+          mainAxisSize: MainAxisSize.min,
           crossAxisAlignment: CrossAxisAlignment.start,
           mainAxisAlignment: MainAxisAlignment.center,
           children: [

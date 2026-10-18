@@ -7,12 +7,16 @@ import '../core/theme/app_colors.dart';
 class SkillChip extends StatefulWidget {
   const SkillChip({
     super.key,
-    required this.icon,
+    this.icon,
+    this.imageAsset,
+    this.imageUrl,
     required this.label,
     required this.color,
   });
 
-  final IconData icon;
+  final IconData? icon;
+  final String? imageAsset;
+  final String? imageUrl;
   final String label;
   final Color color;
 
@@ -22,6 +26,52 @@ class SkillChip extends StatefulWidget {
 
 class _SkillChipState extends State<SkillChip> {
   bool _isHovered = false;
+
+  Widget _buildLogo() {
+    if (widget.imageAsset != null) {
+      return ClipRRect(
+        borderRadius: BorderRadius.circular(4),
+        child: Image.asset(
+          widget.imageAsset!,
+          width: 22,
+          height: 22,
+          fit: BoxFit.contain,
+          errorBuilder: (_, __, ___) {
+            if (widget.imageUrl != null) {
+              return Image.network(
+                widget.imageUrl!,
+                width: 22,
+                height: 22,
+                fit: BoxFit.contain,
+                errorBuilder: (_, __, ___) => _buildFallbackIcon(),
+              );
+            }
+            return _buildFallbackIcon();
+          },
+        ),
+      );
+    } else if (widget.imageUrl != null) {
+      return ClipRRect(
+        borderRadius: BorderRadius.circular(4),
+        child: Image.network(
+          widget.imageUrl!,
+          width: 22,
+          height: 22,
+          fit: BoxFit.contain,
+          errorBuilder: (_, __, ___) => _buildFallbackIcon(),
+        ),
+      );
+    }
+    return _buildFallbackIcon();
+  }
+
+  Widget _buildFallbackIcon() {
+    return Icon(
+      widget.icon ?? Icons.code_rounded,
+      color: widget.color,
+      size: 22,
+    );
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -70,7 +120,7 @@ class _SkillChipState extends State<SkillChip> {
               duration: const Duration(milliseconds: 200),
               curve: Curves.easeOutBack,
               scale: _isHovered ? 1.15 : 1.0,
-              child: Icon(widget.icon, color: widget.color, size: 22),
+              child: _buildLogo(),
             ),
             const SizedBox(height: 6),
             Text(

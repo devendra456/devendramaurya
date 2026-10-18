@@ -79,19 +79,58 @@ class JourneySkillsAwardsSection extends StatelessWidget {
                 spacing: 8,
                 runSpacing: 8,
                 children: const [
-                  SkillChip(icon: Icons.flutter_dash, label: 'Flutter', color: kCyan),
-                  SkillChip(icon: Icons.code_rounded, label: 'Dart', color: kBlue),
+                  SkillChip(
+                    imageAsset: 'assets/images/skill_flutter.png',
+                    imageUrl: 'https://docs.flutter.dev/assets/images/flutter-logo-sharing.png',
+                    icon: Icons.flutter_dash,
+                    label: 'Flutter',
+                    color: kCyan,
+                  ),
+                  SkillChip(
+                    imageAsset: 'assets/images/skill_dart.png',
+                    imageUrl: 'https://avatars.githubusercontent.com/u/1609975?s=280&v=4',
+                    icon: Icons.code_rounded,
+                    label: 'Dart',
+                    color: kBlue,
+                  ),
                   SkillChip(icon: Icons.android_rounded, label: 'Android', color: kGreen),
                   SkillChip(icon: Icons.apple_rounded, label: 'iOS', color: Colors.white),
+                  SkillChip(
+                    imageAsset: 'assets/images/skill_kotlin.png',
+                    imageUrl:
+                        'https://upload.wikimedia.org/wikipedia/commons/7/74/Kotlin_Icon.png?utm_source=commons.wikimedia.org&utm_campaign=index&utm_content=original',
+                    icon: Icons.code_rounded,
+                    label: 'Kotlin',
+                    color: kPurple,
+                  ),
                   SkillChip(
                     icon: Icons.local_fire_department_rounded,
                     label: 'Firebase',
                     color: Color(0xFFFF9E2A),
                   ),
-                  SkillChip(icon: Icons.layers_rounded, label: 'BLOC', color: kBlue),
-                  SkillChip(icon: Icons.close_rounded, label: 'GetX', color: kCyan),
+                  SkillChip(
+                    imageAsset: 'assets/images/skill_bloc.png',
+                    imageUrl:
+                        'https://downloads.marketplace.jetbrains.com/files/12129/1178142/icon/default.png',
+                    icon: Icons.layers_rounded,
+                    label: 'BLOC',
+                    color: kBlue,
+                  ),
+                  SkillChip(
+                    imageAsset: 'assets/images/skill_getx.png',
+                    imageUrl: 'https://res.cloudinary.com/strapi/image/upload/v1621261454/logo_vgoldp.png',
+                    icon: Icons.close_rounded,
+                    label: 'GetX',
+                    color: kCyan,
+                  ),
                   SkillChip(icon: Icons.api_rounded, label: 'REST APIs', color: kCyan),
-                  SkillChip(icon: Icons.grain_rounded, label: 'GraphQL', color: kPink),
+                  SkillChip(
+                    imageAsset: 'assets/images/skill_graphql.png',
+                    imageUrl: 'https://avatars.githubusercontent.com/u/12972006?s=280&v=4',
+                    icon: Icons.grain_rounded,
+                    label: 'GraphQL',
+                    color: kPink,
+                  ),
                   SkillChip(
                     icon: Icons.cloud_circle_rounded,
                     label: 'Cloud Functions',
